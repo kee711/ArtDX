@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:supabase/supabase.dart';
 import 'bottom_sheet.dart';
 
 
@@ -95,6 +96,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       //작품 목록 사이드바 Drawer widget
       drawer: Drawer(
         child: Padding(
@@ -118,14 +120,8 @@ class _MyAppState extends State<MyApp> {
       ),
       appBar: AppBar(
         title: Text('영국 내셔널갤러리 명화전', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
-        // actions: [
-        //   IconButton(
-        //     onPressed: (){
-        //       //작품 목록 햄버거 메뉴
-        //     }, 
-        //     icon: Icon(Icons.menu))
-        // ],
       ),
+      
       body: Padding(
         padding: EdgeInsets.fromLTRB(20,5,20,0),
         child: Column(
@@ -166,6 +162,7 @@ class _MyAppState extends State<MyApp> {
                 //스크롤 가능하도록 만들기
                 child: ListView(
                   children: [
+
                     //작품 키포인트 카드
                     Container(
                       padding: EdgeInsets.fromLTRB(0,10,0,5),
@@ -193,6 +190,7 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ),
                     ),
+
                     //한 줄 평론 카드
                     Container(
                       padding: EdgeInsets.fromLTRB(0,10,0,5),
@@ -215,7 +213,7 @@ class _MyAppState extends State<MyApp> {
                             padding: EdgeInsets.all(10),
                             child: Column(
                               children: [
-                                //한 줄 평론, 한 줄 평론 개수
+                                //'한 줄 평론' 부제목, 한 줄 평론 개수
                                 Row(
                                   children: [
                                     Text('한 줄 평론', style: cardTitle),
@@ -243,6 +241,7 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ),
                     ),
+
                     //작품 설명 카드
                     Container(
                       padding: EdgeInsets.fromLTRB(0,10,0,10),
@@ -255,7 +254,6 @@ class _MyAppState extends State<MyApp> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              //작품 키포인트, 도슨트 이름
                               Text('작품 설명', style: cardTitle),
                               SizedBox(height: 10),
                               //작품 키포인트 내용
