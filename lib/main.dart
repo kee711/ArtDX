@@ -121,7 +121,7 @@ class _MyAppState extends State<MyApp> {
       appBar: AppBar(
         title: Text('영국 내셔널갤러리 명화전', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
       ),
-      
+
       body: Padding(
         padding: EdgeInsets.fromLTRB(20,5,20,0),
         child: Column(
