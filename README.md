@@ -1,16 +1,10 @@
 # flutter_artdx
 
-A new Flutter project.
+## Main Image
 
-## Getting Started
+<img width="399" alt="스크린샷 2023-10-05 오전 6 35 56" src="https://github.com/kee711/ArtDX/assets/59683761/7efc87cd-e631-4380-9872-a2908b8cd6f6">
 
-This project is a starting point for a Flutter application.
+## Demo
 
-A few resources to get you started if this is your first Flutter project:
+https://github.com/kee711/ArtDX/assets/59683761/afef6dae-a6c9-434e-98bf-d1201d8b466e
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
