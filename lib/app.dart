@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // third party packages
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_artdx/styles/palette.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 // local files
@@ -26,9 +27,24 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+        backgroundColor: Palette.backgroundColor,
+        appBar: AppBar(
+          backgroundColor: Palette.backgroundColor,
+          centerTitle: false,
+          iconTheme: IconThemeData(color: Palette.progressBar),
+          shape: Border(
+            bottom: BorderSide(color: Palette.progressBar, width: 1),
+          ),
+          title: Text(
+            '영국 내셔널갤러리 명화전',
+            style: AppTextStyle.fontBlack.copyWith(
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
         //작품 목록 사이드바 Drawer widget
-        drawer: Drawer(
+        endDrawer: Drawer(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(8, 40, 8, 0),
             child: ListView.builder(
@@ -52,13 +68,6 @@ class _MyAppState extends State<MyApp> {
                 }),
           ),
         ),
-        appBar: AppBar(
-          title: Text(
-            '영국 내셔널갤러리 명화전',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-          ),
-        ),
-
         // Superbase data 가져오기
         body: StreamBuilder<List<Map<String, dynamic>>>(
             stream: _future,
@@ -124,8 +133,10 @@ class _MyAppState extends State<MyApp> {
                             Container(
                               padding: EdgeInsets.fromLTRB(0, 10, 0, 5),
                               child: Card(
+                                elevation: 0,
                                 shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15)),
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
                                 child: Padding(
                                   padding: EdgeInsets.all(10),
                                   child: Column(
@@ -133,13 +144,16 @@ class _MyAppState extends State<MyApp> {
                                       //작품 키포인트, 도슨트 이름
                                       Row(
                                         children: [
-                                          Text('작품 키포인트',
-                                              style: AppTextStyle.cardTitle),
+                                          Text(
+                                            '작품 키포인트',
+                                            style: AppTextStyle.cardTitle,
+                                          ),
                                           SizedBox(width: 10),
                                           Text(
-                                              TestData.localDataList[id]
-                                                  ["docent"],
-                                              style: AppTextStyle.cardSubtext),
+                                            TestData.localDataList[id]
+                                                ["docent"],
+                                            style: AppTextStyle.cardSubtext,
+                                          ),
                                         ],
                                       ),
                                       SizedBox(height: 10),
@@ -166,6 +180,7 @@ class _MyAppState extends State<MyApp> {
                                           BuildSheet());
                                 },
                                 child: Card(
+                                  elevation: 0,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(15)),
                                   child: Padding(
@@ -214,6 +229,7 @@ class _MyAppState extends State<MyApp> {
                             Container(
                               padding: EdgeInsets.symmetric(vertical: 10),
                               child: Card(
+                                elevation: 0,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15)),
                                 child: Padding(
